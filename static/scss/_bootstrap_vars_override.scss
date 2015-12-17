@@ -1,0 +1,17 @@
+$link-color: $color-firm-blue !default;
+
+$link-hover-color: darken($color-firm-blue, 10%) !default;
+
+$navbar-default-brand-color: $color-firm-blue !default;
+$navbar-default-link-color: $color-link-gray !default;
+$navbar-default-link-hover-color: lighten($link-color, 10%) !default;
+$navbar-default-link-active-bg: #fff !default;
+
+$navbar-default-toggle-hover-bg: lighten($border-firm-blue, 45%) !default;
+$navbar-default-toggle-icon-bar-bg: lighten($border-firm-blue, 25%) !default;
+$navbar-default-toggle-border-color: lighten($border-firm-blue, 25%) !default;
+
+$navbar-default-bg: #fff !default;
+$navbar-height: 80px !default;
+
+$btn-primary-bg: $bg-firm-blue !default;

@@ -1,0 +1,68 @@
+@import 'vars';
+
+@import 'bootstrap_vars_override';
+
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import 'bootstrap_override';
+
+
+html, body {
+	height: 100%;
+}
+
+body {
+	color: $color-text-gray;
+	font-size: 14px;	
+}
+
+p {
+	line-height: 22px;
+}
+
+.page-wrap {
+	min-height: 100%;
+	padding-bottom: 80px;
+}
+
+.footer-placeholder {
+	height: $footer-h;
+}
+
+.footer {
+	height: $footer-h;
+	margin-top: -$footer-h;
+
+	.copy {
+		color: #666666;
+	}
+}
+
+.clients {
+	padding-top: 30px;
+	.client-box {
+		+ .client-box {
+			margin-top: 70px;
+		}
+	}
+	.client-img {
+		text-align: center;
+		img {
+			display: block;
+			margin: auto;
+			max-width: 100%;
+		}
+		@media (max-width: $screen-xs-max) {
+			margin-bottom: 20px;
+			img {
+				margin: 0;
+			}
+		}
+	}
+	.client-text {}
+}
+
+.btn.extra-padding {
+	padding-left: 50px;
+	padding-right: 50px;
+}

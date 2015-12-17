@@ -1,0 +1,39 @@
+.navbar-brand {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.navbar-nav {
+	@media (max-width: $screen-xs-max) {		
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	> li {
+		&.active {
+			> a {
+				border-color: $border-firm-blue;
+			}
+		}
+		> a {
+			font-size: 18px;
+			border-bottom: 3px solid transparent;
+			display: block;			
+			height: $navbar-height;
+
+			@media (max-width: $screen-xs-max) {
+				font-size: 14px;
+				height: auto;
+				border-bottom: 0;
+				border-left: 3px solid transparent;
+			}
+		}
+	}
+}
+
+h1, .h1 {
+	font-size: 24px;
+}
+
+label {
+	font-weight: normal;
+}

@@ -2670,3 +2670,6 @@ p { line-height: 22px; }
  .visible-md-inline{ display: inline !important; }
  .visible-md-inline-block{ display: inline-block !important; }
  .hidden-md{ display: none !important; } }
+
+@media (max-width: 991px){
+ .navbar-nav > li > a{ font-size: 14px; } }

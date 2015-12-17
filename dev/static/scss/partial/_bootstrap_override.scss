@@ -20,6 +20,9 @@
 			display: block;			
 			height: $navbar-height;
 
+			@media (max-width: $screen-sm-max) {
+				font-size: 14px;
+			}
 			@media (max-width: $screen-xs-max) {
 				font-size: 14px;
 				height: auto;

@@ -65,6 +65,9 @@ gulp.task('html:build', function () {
 gulp.task('move:build', function () {
     gulp.src('./dev/tmp/**/*')
         .pipe(gulp.dest('./build/tmp'))
+
+    gulp.src('./dev/static/fonts/**/*')
+        .pipe(gulp.dest('./build/static/fonts/'))
 });
 
 gulp.task('build', [

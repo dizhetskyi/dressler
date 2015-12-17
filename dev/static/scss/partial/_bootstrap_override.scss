@@ -14,11 +14,23 @@
 				border-color: $border-firm-blue;
 			}
 		}
+		+ li {
+			margin-left: 40px;
+
+			@media (max-width: $screen-md-max) {
+				margin-left: 30px;
+			}
+
+			@media (max-width: $screen-sm-max) {
+				margin-left: 0px;
+			}
+		}
 		> a {
 			font-size: 18px;
 			border-bottom: 3px solid transparent;
 			display: block;			
 			height: $navbar-height;
+			font-weight: 400;
 
 			@media (max-width: $screen-sm-max) {
 				font-size: 14px;
@@ -33,10 +45,39 @@
 	}
 }
 
-h1, .h1 {
+h1 {
 	font-size: 24px;
+}
+
+.h1 {
+	font-size: 28px;
+}
+
+h1, .h1 {
+	font-weight: 400;
+}
+
+.h2 {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-weight: 300;
 }
 
 label {
 	font-weight: normal;
+}
+
+.btn {
+	font-weight: 300;
+}
+
+.form-control {
+	box-shadow: none;
 }

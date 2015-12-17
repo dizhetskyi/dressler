@@ -1,4 +1,5 @@
 @import './partial/vars';
+@import './partial/fonts';
 
 @import './partial/bootstrap_vars_override';
 
@@ -13,16 +14,28 @@ html, body {
 
 body {
 	color: $color-text-gray;
-	font-size: 14px;	
+	font: normal 14px 'montserrat', 'Arial', sans-serif;
+	font-weight: 300;
 }
 
 p {
 	line-height: 22px;
+	margin-bottom: 1.5em;
+}
+
+input {
+	font-weight: 300;
+}
+button {
+	font-weight: 300;
 }
 
 .page-wrap {
 	min-height: 100%;
-	padding-bottom: 80px;
+}
+
+.page-content {
+	padding: 40px 0 80px;
 }
 
 .footer-placeholder {
@@ -65,4 +78,10 @@ p {
 .btn.extra-padding {
 	padding-left: 50px;
 	padding-right: 50px;
+}
+
+.feedback-form {
+	@media (max-width: $screen-xs-max) {
+		margin-top: 50px;
+	}
 }

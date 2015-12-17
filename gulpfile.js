@@ -3,13 +3,15 @@
 var gulp          = require('gulp');
 
 var browserSync   = require('browser-sync').create();
-var reload        = browserSync.reload({stream: true});
+var reload        = browserSync.reload;
 
 var sass          = require('gulp-sass');
 
 var postcss       = require('gulp-postcss');
 var autoprefixer  = require('autoprefixer');
 var mqpacker      = require('css-mqpacker');
+
+var fileinclude   = require('gulp-file-include');
 
 var wiredep       = require('wiredep').stream;
 
@@ -23,7 +25,14 @@ var minifyCss     = require('gulp-minify-css');
 // config
 
 var config = {
-  server: {},
+  server: {
+    notify: false,
+    server: {
+      baseDir: './' ,
+      directory: true
+    },
+    startPath: './dev/html-preview/'
+  },
   devPath: {},
   buildPath: {}
 }
@@ -38,65 +47,67 @@ gulp.task('css:build', function(){
     mqpacker()
   ];
 
-  gulp.src('./static/scss/**/*.scss')
+  gulp.src('./dev/static/scss/**/*.scss')
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./static/css/'));
+    .pipe(gulp.dest('./build/static/css/'));
 
 })
 
 gulp.task('html:build', function () {
-    return gulp.src('./html/*.html')
+    return gulp.src('./dev/html-preview/*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', minifyCss()))
         .pipe(gulp.dest('./build/html/'));
 });
 
+gulp.task('move:build', function () {
+    gulp.src('./dev/tmp/**/*')
+        .pipe(gulp.dest('./build/tmp'))
+});
+
 gulp.task('build', [
     'html:build',
-    'css:build'
+    'css:build',
+    'move:build'
 ]);
 
 
 // dev
 
-gulp.task('sass', function(){
+gulp.task('html:dev', function () {
 
-  gulp.src('./static/scss/**/*.scss')
+  gulp.src('./dev/html/partial/*.html')
+    .pipe(wiredep())
+    .pipe(gulp.dest('./dev/html/partial'))
+
+  gulp.src('./dev/html/*.html')    
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))    
+    .pipe(gulp.dest('./dev/html-preview'))
+    .pipe(reload({stream: true}));
+
+});
+
+gulp.task('sass:dev', function(){
+
+  return gulp.src('./dev/static/scss/*.scss')
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
-    .pipe(gulp.dest('./static/css/'))
+    .pipe(gulp.dest('./dev/static/css/'))
     .pipe(browserSync.stream());
 
 });
 
-gulp.task('html', function () {
-  gulp.src('./html/*.html')
-    .pipe(wiredep())
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest('./html-preview/'))
-    .pipe(reload({stream: true}));
-});
 
-
-gulp.task('serve', ['html', 'sass'], function(){
+gulp.task('serve', ['html:dev', 'sass:dev'], function(){
   
-  browserSync.init({
-    notify: false,
-    server: {
-      baseDir: './' ,
-      directory: true
-    },
-    startPath: './html-preview/'
-  });
+  browserSync.init(config.server);
 
-  gulp.watch('./html/*.html').on('change', function(){
-    gulp.run('html');
-  });
+  gulp.watch('./dev/html/*.html', ['html:dev']);
 
-  gulp.watch('./static/scss/**/*.scss' , ['sass']);
+  gulp.watch('./dev/static/scss/**/*.scss', ['sass:dev']);  
 
 })

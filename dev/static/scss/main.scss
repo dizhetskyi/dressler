@@ -1,10 +1,10 @@
-@import 'vars';
+@import './partial/vars';
 
-@import 'bootstrap_vars_override';
+@import './partial/bootstrap_vars_override';
 
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import 'bootstrap_override';
+@import './partial/bootstrap_override';
 
 
 html, body {

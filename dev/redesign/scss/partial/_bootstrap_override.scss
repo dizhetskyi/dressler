@@ -1,6 +1,16 @@
+.navbar {
+	border: 0;
+	border-bottom: 1px solid #eee;
+	border-radius: 0 !important;
+}
+
 .navbar-brand {
 	font-weight: bold;
 	font-size: 24px;
+
+	@media (max-width: $screen-sm-max) {		
+		font-size: 16px;
+	}
 }
 
 .navbar-nav {
@@ -17,7 +27,7 @@
 		+ li {
 			margin-left: 40px;
 
-			@media (max-width: $screen-md-max) {
+			@media (min-width: $screen-sm-max) and (max-width: $screen-md-max) {
 				margin-left: 30px;
 			}
 

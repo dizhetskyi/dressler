@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+	<title>Dressler Consulting &mdash; Contacts</title>
 	
 	
 <meta charset="UTF-8">
-<title>Document</title>
 
+<meta http-equiv="Content-Language" content="en-us">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -65,8 +67,8 @@
 							Merrick, NY 11566</p>
 							
 							<p><b>Electronic mail:</b><br>
-							General Information: <a href="">chris@dresslerconsulting.com</a><br>
-							Webmaster: <a href="">webmaster@dresslerconsulting.com</a></p>
+							General Information: <a href="mailto:chris@dresslerconsulting.com">chris@dresslerconsulting.com</a><br>
+							Webmaster: <a href="mailto:webmaster@dresslerconsulting.com">webmaster@dresslerconsulting.com</a></p>
 							 
 						</div>
 
@@ -76,19 +78,43 @@
 
 							<br>
 
-							<form>
+							<form method="POST" action="_derived/nortbots.htm" onSubmit="location.href='_derived/nortbots.htm';return false;" webbot-onSubmit webbot-action="--WEBBOT-SELF--">
+
+								<input TYPE="hidden" NAME="VTI-GROUP" VALUE="0">
 								
 								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label>Category</label>
+											<select name="Category" class="form-control">
+									            <option selected value="web">Web site</option>
+									            <option value="company">Company</option>
+									            <option value="services">Services</option>
+									        </select>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+										    <label>Comments</label>
+										    <textarea rows="3" class="form-control" name="Comments"></textarea>
+									  	</div>
+									</div>
+								</div>
+
+								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
-										    <label>First Name</label>
-										    <input class="form-control">
+										    <label>Name</label>
+										    <input class="form-control" name="Name">
 									  	</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-										    <label>Last Name</label>
-										    <input class="form-control">
+										    <label>Title</label>
+										    <input class="form-control" name="Title">
 									  	</div>
 								  	</div>
 								</div>
@@ -96,14 +122,29 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
-										    <label>First Name</label>
-										    <input class="form-control">
+										    <label>Company</label>
+										    <input class="form-control" name="Company">
 									  	</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-										    <label>Last Name</label>
-										    <input class="form-control">
+										    <label>Telephone</label>
+										    <input class="form-control" name="Telephone">
+									  	</div>
+								  	</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+										    <label>FAX</label>
+										    <input class="form-control" name="FAX">
+									  	</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+										    <label>E-mail</label>
+										    <input class="form-control" name="E-mail">
 									  	</div>
 								  	</div>
 								</div>
@@ -111,19 +152,8 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="form-group">
-										    <label>Category</label>
-										    <select class="form-control">
-										    	<option>Select</option>
-										    </select>
-									  	</div>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="form-group">
-										    <label>Comment</label>
-										    <textarea class="form-control" rows=4></textarea>
+										    <label>Address</label>
+										    <input class="form-control" name="Address">
 									  	</div>
 									</div>
 								</div>
@@ -131,7 +161,7 @@
 								<br>
 
 								<button class="btn btn-primary extra-padding">Submit</button>
-								<a href="" class="btn btn-lin extra-padding">Cancel</a>
+								<button type="reset" class="btn btn-link extra-padding">Reset</button>
 
 							</form>
 						</div>
@@ -149,7 +179,7 @@
 
 	<div class="footer">
 		<div class="container">
-			<p>Send mail to <a href="">webmaster@dresslerconsulting.com</a> with questions or comments about this web site.</p>
+			<p>Send mail to <a href="mailto:webmaster@dresslerconsulting.com">webmaster@dresslerconsulting.com</a> with questions or comments about this web site.</p>
 			<div class="copy">
 				<p>Copyright © 2015 Dressler Consulting LLC</p>
 			</div>

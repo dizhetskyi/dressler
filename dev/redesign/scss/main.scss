@@ -36,6 +36,11 @@ button {
 
 .page-content {
 	padding: 40px 0 80px;
+
+
+	@media (max-width: $screen-xs-max) {		
+		padding-top: 0;
+	}
 }
 
 .footer-placeholder {

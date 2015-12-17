@@ -1,9 +1,9 @@
 @charset "UTF-8";
-@font-face { font-family: 'montserrat'; src: url("../fonts/montserrat-bold-webfont.eot"); src: url("../fonts/montserrat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-bold-webfont.woff") format("woff"), url("../fonts/montserrat-bold-webfont.ttf") format("truetype"), url("../fonts/montserrat-bold-webfont.svg#montserratbold") format("svg"); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'montserrat'; src: url("../fonts/montserrat-bold-webfont.eot"); src: url("../fonts/montserrat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat-bold-webfont.woff") format("woff"), url("../fonts/montserrat-bold-webfont.ttf") format("truetype"), url("../fonts/montserrat-bold-webfont.svg#montserratbold") format("svg"); font-weight: 600; font-style: normal; }
 
-@font-face { font-family: 'montserrat'; src: url("../fonts/montserrat-light-webfont.eot"); src: url("../fonts/montserrat-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-light-webfont.woff") format("woff"), url("../fonts/montserrat-light-webfont.ttf") format("truetype"), url("../fonts/montserrat-light-webfont.svg#montserratlight") format("svg"); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'montserrat'; src: url("../fonts/montserrat-light-webfont.eot"); src: url("../fonts/montserrat-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-light-webfont.woff2") format("woff2"), url("../fonts/montserrat-light-webfont.woff") format("woff"), url("../fonts/montserrat-light-webfont.ttf") format("truetype"), url("../fonts/montserrat-light-webfont.svg#montserratlight") format("svg"); font-weight: 300; font-style: normal; }
 
-@font-face { font-family: 'montserrat'; src: url("../fonts/montserrat-regular-webfont.eot"); src: url("../fonts/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-regular-webfont.woff") format("woff"), url("../fonts/montserrat-regular-webfont.ttf") format("truetype"), url("../fonts/montserrat-regular-webfont.svg#montserratregular") format("svg"); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'montserrat'; src: url("../fonts/montserrat-regular-webfont.eot"); src: url("../fonts/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/montserrat-regular-webfont.woff") format("woff"), url("../fonts/montserrat-regular-webfont.ttf") format("truetype"), url("../fonts/montserrat-regular-webfont.svg#montserratregular") format("svg"); font-weight: 400; font-style: normal; }
 
 /*! Bootstrap v3.3.6 (http://getbootstrap.com) Copyright 2011-2015 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -2680,7 +2680,11 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 @media print { .hidden-print { display: none !important; } }
 
+.navbar { border: 0; border-bottom: 1px solid #eee; border-radius: 0 !important; }
+
 .navbar-brand { font-weight: bold; font-size: 24px; }
+
+@media (max-width: 991px) { .navbar-brand { font-size: 16px; } }
 
 @media (max-width: 767px) { .navbar-nav { margin-top: 0; margin-bottom: 0; } }
 
@@ -2688,7 +2692,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 .navbar-nav > li + li { margin-left: 40px; }
 
-@media (max-width: 1199px) { .navbar-nav > li + li { margin-left: 30px; } }
+@media (min-width: 991px) and (max-width: 1199px) { .navbar-nav > li + li { margin-left: 30px; } }
 
 @media (max-width: 991px) { .navbar-nav > li + li { margin-left: 0px; } }
 
@@ -2727,6 +2731,8 @@ button { font-weight: 300; }
 .page-wrap { min-height: 100%; }
 
 .page-content { padding: 40px 0 80px; }
+
+@media (max-width: 767px) { .page-content { padding-top: 0; } }
 
 .footer-placeholder { height: 70px; }
 

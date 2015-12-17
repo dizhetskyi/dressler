@@ -47,10 +47,10 @@ gulp.task('css:build', function(){
     mqpacker()
   ];
 
-  gulp.src('./dev/static/scss/**/*.scss')
+  gulp.src('./dev/redesign/scss/**/*.scss')
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./build/static/css/'));
+    .pipe(gulp.dest('./build/redesign/css/'));
 
 })
 
@@ -59,15 +59,15 @@ gulp.task('html:build', function () {
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', minifyCss()))
-        .pipe(gulp.dest('./build/html/'));
+        .pipe(gulp.dest('./build/'));
 });
 
 gulp.task('move:build', function () {
-    gulp.src('./dev/tmp/**/*')
-        .pipe(gulp.dest('./build/tmp'))
+    gulp.src('./dev/redesign/i/**/*')
+        .pipe(gulp.dest('./build/redesign/i'))
 
-    gulp.src('./dev/static/fonts/**/*')
-        .pipe(gulp.dest('./build/static/fonts/'))
+    gulp.src('./dev/redesign/fonts/**/*')
+        .pipe(gulp.dest('./build/redesign/fonts/'))
 });
 
 gulp.task('build', [
@@ -81,11 +81,11 @@ gulp.task('build', [
 
 gulp.task('html:dev', function () {
 
-  gulp.src('./dev/html/partial/*.html')
+  gulp.src('./dev/partial/*.html')
     .pipe(wiredep())
-    .pipe(gulp.dest('./dev/html/partial'))
+    .pipe(gulp.dest('./dev/partial'))
 
-  gulp.src('./dev/html/*.html')    
+  gulp.src('./dev/*.html')    
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -97,9 +97,9 @@ gulp.task('html:dev', function () {
 
 gulp.task('sass:dev', function(){
 
-  return gulp.src('./dev/static/scss/*.scss')
+  return gulp.src('./dev/redesign/scss/*.scss')
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
-    .pipe(gulp.dest('./dev/static/css/'))
+    .pipe(gulp.dest('./dev/redesign/css/'))
     .pipe(browserSync.stream());
 
 });
@@ -109,8 +109,8 @@ gulp.task('serve', ['html:dev', 'sass:dev'], function(){
   
   browserSync.init(config.server);
 
-  gulp.watch('./dev/html/*.html', ['html:dev']);
+  gulp.watch('./dev/*.html', ['html:dev']);
 
-  gulp.watch('./dev/static/scss/**/*.scss', ['sass:dev']);  
+  gulp.watch('./dev/redesign/scss/**/*.scss', ['sass:dev']);  
 
 })

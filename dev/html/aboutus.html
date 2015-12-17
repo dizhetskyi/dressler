@@ -2,18 +2,7 @@
 <html lang="en">
 <head>
 	
-	
-<meta charset="UTF-8">
-<title>Document</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- build:css ../static/css/vendors.css -->
-<!-- bower:css -->
-<!-- endbower -->
-<!-- endbuild -->
-
-<link rel="stylesheet" href="../static/css/main.css">
+	@@include('./partial/_head.html')
 
 </head>
 <body>
@@ -35,10 +24,10 @@
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Clients</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Contact Us</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="partners.html">Clients</a></li>
+						<li class="active"><a href="aboutus.html">About Us</a></li>
+						<li><a href="contactus.html">Contact Us</a></li>
 					</ul>
 
 				</div>
@@ -114,12 +103,7 @@
 		</div>
 	</div>
 
-	<!-- build:js ../static/js/vendors.js -->
-
-<script src="../../bower_components/jquery/dist/jquery.js"></script>
-<script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-
-<!-- endbuild -->
+	@@include('./partial/_js.html')
 
 </body>
 </html>
